@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Structures Full Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5/dist/flatly/bootstrap.min.css">
+</head>
+
+<body class="container mt-5">
+
+    <h2>JavaScript Structures Demo</h2>
+
+
+    <button class="btn btn-primary" onclick="demoNative()">Native Types</button>
+    <button class="btn btn-primary" onclick="demoObjects()">Objects</button>
+    <button class="btn btn-primary" onclick="demoObjArrayDestruct()">Obj + Array + Destruct</button>
+    <button class="btn btn-primary" onclick="demoClasses()">Classes</button>
+    <button class="btn btn-primary" id="btn2">Click Here</button>
+
+    <br><br>
+
+    <div class="container mt-3">
+        <div class="row g-2 align-items-center">
+
+            <div class="col-auto">
+                <input id="num1" type="number" class="form-control text-center" placeholder="Number 1">
+            </div>
+
+            <div class="col-auto fw-bold fs-3">+</div>
+
+            <div class="col-auto">
+                <input id="num2" type="number" class="form-control text-center" placeholder="Number 2">
+            </div>
+
+            <div class="col-auto">
+                <button id="calcBtn" class="btn btn-primary col-auto fw-bold text-center">=</button>
+            </div>
+
+            <div class="col-auto">
+                <output id="result" class="form-control bg-light border text-center" style="width:150px;"></output>
+            </div>
+
+        </div>
+    </div>
+
+    <br><br>
+
+    <textarea id="output" cols="50" rows="10"></textarea>
+
+    <br><br>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
