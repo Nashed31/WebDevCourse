@@ -1,19 +1,70 @@
-// Load last page if exists
-window.onload = () => {
+// Pages
+const pages = [
+    { title: "00_HomePage", folder: "00_Home", file: "index.html" },
+    { title: "01_IntroApp", folder: "01_IntroApp", file: "index.html" },
+    { title: "02_Styling", folder: "02_Styling", file: "index.html" },
+    { title: "03_Layout_Iframe", folder: "03_Layout/Layout_2_Iframe", file: "index.html" },
+    { title: "03_Layout_BootStrap", folder: "03_Layout", file: "bootstrap.html" },
+    { title: "04_HtmlElements", folder: "04_HtmlElements", file: "index.html" },
+    { title: "05_JSON", folder: "05_JSON", file: "index.html" },
+    { title: "06_ClientServer", folder: "06_ClientServer/client", file: "home.html" },
+    { title: "07_QueryString", folder: "07_QueryString", file: "list.html" }
+];
+
+// Build sidebar
+const navList = document.getElementById("navList");
+
+pages.forEach(p => {
+    const fullPath = `${p.folder}/${p.file}`;
+
+    navList.innerHTML += `
+        <li class="nav-item">
+            <a class="nav-link" href="?page=${encodeURIComponent(fullPath)}" data-page="${fullPath}">
+                <i class="fas fa-gauge"></i> ${p.title}
+            </a>
+        </li>
+    `;
+});
+
+const contentFrame = document.getElementById("contentFrame");
+const sidebar = document.getElementById("sidebar");
+
+// Load from URL or localStorage
+function loadInitialPage() {
+    const params = new URLSearchParams(location.search);
+    const queryPage = params.get("page");
     const lastPage = localStorage.getItem("lastPage");
-    if (lastPage) {
-        document.getElementById("contentFrame").src = lastPage;
-    }
-};
 
-// Save selected page
-function loadPage(page) {
-    document.getElementById("contentFrame").src = page;
+    let page = "logo.png"; // default
+
+    if (queryPage) page = queryPage;
+    else if (lastPage) page = lastPage;
+
+    contentFrame.src = page;
+}
+
+loadInitialPage();
+
+// Sidebar link click handler (event delegation)
+navList.addEventListener("click", e => {
+    const link = e.target.closest("a[data-page]");
+    if (!link) return;
+
+    e.preventDefault();
+
+    const page = link.dataset.page;
+    contentFrame.src = page;
+
     localStorage.setItem("lastPage", page);
-    document.getElementById("sidebar").classList.remove("show");
-}
+    history.pushState({}, "", "?page=" + encodeURIComponent(page));
 
+    sidebar.classList.remove("show");
+});
 
-function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("show");
-}
+// Back/forward browser navigation
+window.addEventListener("popstate", loadInitialPage);
+
+// Toggle sidebar (mobile)
+document.getElementById("toggleSidebar").addEventListener("click", () => {
+    sidebar.classList.toggle("show");
+});

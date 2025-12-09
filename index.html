@@ -79,7 +79,9 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <img src="logo.png" width="36" height="36" class="rounded" alt="logo">
+            <a href="?page=00_Home/index.html">
+                <img src="00_Home/logo.png" width="50" height="50" class="rounded" alt="logo">
+            </a>
 
             <h5 class="m-0 fw-bold">Web Dev Course - Telhai</h5>
         </div>
@@ -101,68 +103,12 @@
         <!-- SIDEBAR MENU -->
         <nav id="sidebar" class="sidebar p-3">
             <h6 class="fw-bold text-uppercase text-muted">Navigation Menu</h6>
-            <ul class="nav flex-column">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadPage('logo.png')">
-                        <i class="fas fa-gauge"></i> Home
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadPage('01_IntroApp/index.html')">
-                        <i class="fas fa-gauge"></i> 01_IntroApp
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadPage('02_Styling/index.html')">
-                        <i class="fas fa-gauge"></i> 02_Styling
-                    </a>
-                </li>
-
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadPage('03_Layout/Layout_1_Clone/index.html')">
-                        <i class="fas fa-gauge"></i> 03_Layout_Clone
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadPage('03_Layout/Layout_2_Iframe/index.html')">
-                        <i class="fas fa-gauge"></i> 03_Layout_Iframe
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadPage('03_Layout/bootstrap.html')">
-                        <i class="fas fa-gauge"></i> 03_Layout_BootStrap
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadPage('04_HtmlElements/index.html')">
-                        <i class="fas fa-gauge"></i> 04_HtmlElements
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadPage('05_JSON/index.html')">
-                        <i class="fas fa-gauge"></i> 05_JSON
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="loadPage('06_ClientServer/client/home.html')">
-                        <i class="fas fa-gauge"></i> 06_ClientServer
-                    </a>
-                </li>
-
-            </ul>
+            <ul id="navList" class="nav flex-column"></ul>
         </nav>
 
         <!-- MAIN CONTENT -->
         <main class="main-area flex-fill">
-            <iframe id="contentFrame" src="logo.png"></iframe>
+            <iframe id="contentFrame"></iframe>
         </main>
     </div>
 
