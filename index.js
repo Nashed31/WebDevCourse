@@ -8,7 +8,11 @@ const pages = [
     { title: "04_HtmlElements", folder: "04_HtmlElements", file: "index.html" },
     { title: "05_JSON", folder: "05_JSON", file: "index.html" },
     { title: "06_ClientServer", folder: "06_ClientServer/client", file: "home.html" },
-    { title: "07_QueryString", folder: "07_QueryString", file: "list.html" }
+    { title: "07_QueryString", folder: "07_QueryString", file: "list.html" },
+    { title: "08_API", folder: "08_API/client", file: "index.html" },
+    { title: "09_POST", folder: "09_POST/client", file: "index.html" },
+    { title: "10_Session", folder: "10_Session/client", file: "index.html" },
+    { title: "11_Session", folder: "11_Session/views", file: "tasks.ejs" }
 ];
 
 // Build sidebar
