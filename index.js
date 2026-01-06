@@ -11,8 +11,9 @@ const pages = [
     { title: "07_QueryString", folder: "07_QueryString", file: "list.html" },
     { title: "08_API", folder: "08_API/client", file: "index.html" },
     { title: "09_POST", folder: "09_POST/client", file: "index.html" },
-    { title: "10_Session", folder: "10_Session/client", file: "index.html" },
-    { title: "11_Session", folder: "11_Session/views", file: "tasks.ejs" }
+    { title: "10_Session", folder: "10_Session/Client", file: "index.html" },
+    { title: "11_Session", folder: "11_Session/views", file: "tasks.ejs" },
+    { title: "12_Import_Export", folder: "12_Import_Export", file: "index.html" }
 ];
 
 // Build sidebar
